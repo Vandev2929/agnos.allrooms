@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Login Form</title>
+    <link rel="stylesheet" href="css/meow.css">
+</head>
+
+<body>
+    <div class="main">
+        <h1>AllRooms</h1>
+        <h3>Въведете потребителското име и паролата, които сме ви изпратили при <a href= "https://store88163516.company.site/"> закупуване на платформата</a></h3>
+        <form onsubmit="return validateCredentials();">
+            <label for="first">
+                Username:
+            </label>
+            <input type="text" id="first" name="first" placeholder="Enter your Username" required>
+
+            <label for="password">
+                Password:
+            </label>
+            <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+
+            <div class="wrap">
+                <button type="submit">
+                    Напред
+                </button>
+            </div>
+        </form>
+        <p>Изпитвате проблеми?
+            <a href="contact.html" style="text-decoration: none;">
+                Направете запитване
+            </a>
+        </p>
+    </div>
+    <script>
+        // Simple usernames with 'Client' and 'Guest' followed by numbers
+        const validCredentials = {
+            "Client101": "pw45",
+            "Client102": "rm67",
+            "Client103": "xy12",
+            "Client104": "kz98",
+            "Client105": "bt34",
+            "Guest201": "rw56",
+            "Guest202": "jk43",
+            "Guest203": "vm12",
+            "Guest204": "yt78",
+            "Guest205": "op21",
+            "Client106": "sw91",
+            "Client107": "mq84",
+            "Client108": "vb47",
+            "Client109": "lp56",
+            "Client110": "nz33",
+            "Guest206": "dz45",
+            "Guest207": "pl98",
+            "Guest208": "xq12",
+            "Guest209": "mh77",
+            "Guest210": "bv66"
+        };
+
+        function validateCredentials() {
+            const username = document.getElementById("first").value;
+            const password = document.getElementById("password").value;
+
+            // Check if the username exists and the password matches
+            if (validCredentials[username] && validCredentials[username] === password) {
+                // Proceed to the next page if valid
+                window.location.href = 'service.html';
+                return false; // Prevent default form submission
+            } else {
+                // Display an error message if invalid
+                alert("Invalid username or password. Please try again.");
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>
